@@ -1,22 +1,20 @@
-# 1. Ignore EVERYTHING in the project by default
-*
+# 1. Ignore EVERYTHING in the root directory by default
+/*
 
-# 2. Allow Git to read inside these required folders
-!evaluation/
-!state/
+# 2. Allow Git to read these specific folders and files in the root
+!/evaluation/
+!/state/
+!/.gitignore
+!/requirements.txt
+!/strategy1_dualbasket2.py
+!/baskets_nifty200_all_sizes.csv
 
-# 3. Explicitly allow ONLY the required files in the main folder
-!.gitignore
-!requirements.txt
-!strategy1_dualbasket2.py
-!baskets_nifty200_all_sizes.csv
-
-# 4. Ignore everything inside the state folder...
-state/*
+# 3. Ignore everything inside the state folder...
+/state/*
 # ...EXCEPT the exact quantities file
-!state/basket_quantities_6.json
+!/state/basket_quantities_6.json
 
-# 5. Global rules to block cache/secrets (even inside allowed folders)
+# 4. Global rules to block cache/secrets (even inside allowed folders)
 __pycache__/
 *.pyc
 .env
